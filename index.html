@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClearItUp NW | Junk Removal & Cleanouts</title>
+  <meta name="description" content="Local junk removal and cleanouts serving Kirkland, Bothell, Kenmore, Woodinville, and Redmond. Flat-rate pricing, same-day availability, licensed and insured." />
+  <style>
+    :root {
+      --bg: #f6f3ed;
+      --surface: #fffdf8;
+      --text: #1d1d1d;
+      --muted: #4b4b4b;
+      --brand: #1f5d3a;
+      --brand-2: #153f29;
+      --accent: #e47a2e;
+      --line: #d9d4ca;
+      --max: 1100px;
+      --radius: 14px;
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", "Trebuchet MS", "Verdana", sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at 10% 10%, #ffffff, var(--bg));
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--max));
+      margin-inline: auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(246, 243, 237, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      color: var(--brand-2);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.72rem 1rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #111;
+    }
+
+    .btn-secondary {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .hero {
+      padding: 4rem 0 3rem;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(120deg, rgba(31, 93, 58, 0.95), rgba(21, 63, 41, 0.95)),
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.04) 0 8px, rgba(255, 255, 255, 0.01) 8px 16px);
+      color: #fff;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1.2rem;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: clamp(1.9rem, 4.6vw, 3.2rem);
+      line-height: 1.08;
+      margin: 0;
+    }
+
+    .hero p {
+      margin: 0.9rem 0 1.2rem;
+      color: #f1f1f1;
+      max-width: 62ch;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .trust {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .trust div {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: var(--radius);
+      padding: 0.8rem;
+      font-size: 0.92rem;
+    }
+
+    section {
+      padding: 2.8rem 0;
+    }
+
+    h2 {
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      margin: 0 0 0.9rem;
+      color: var(--brand-2);
+    }
+
+    .sub {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      max-width: 65ch;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.9rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.02rem;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .price-table th,
+    .price-table td {
+      text-align: left;
+      padding: 0.72rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .price-table th {
+      background: #f0ece4;
+    }
+
+    .price-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.9rem;
+    }
+
+    .step-num {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      display: inline-grid;
+      place-items: center;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 800;
+      margin-bottom: 0.4rem;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .contact {
+      background: linear-gradient(180deg, #fdfbf6, #f3ede2);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-box {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1rem;
+      box-shadow: var(--shadow);
+    }
+
+    footer {
+      padding: 1.4rem 0 2rem;
+      color: #444;
+      font-size: 0.93rem;
+    }
+
+    .small {
+      color: #555;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .grid-3,
+      .steps,
+      .about,
+      .trust {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">ClearItUp NW</a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="sms:+13607263709">Text for Quote</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="top" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Junk Removal & Cleanouts on the Eastside</h1>
+        <p>
+          Same-day and next-day service in Kirkland, Bothell, Kenmore, Woodinville, and Redmond.
+          Text photos for a fast flat-rate quote.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="sms:+13607263709">Text (360) 726-3709</a>
+          <a class="btn btn-secondary" href="tel:+13607263709">Call Now</a>
+        </div>
+        <div class="trust">
+          <div><strong>Licensed & Insured</strong><br>ClearItUp LLC in Washington</div>
+          <div><strong>Flat-Rate Quotes</strong><br>No surprise charges</div>
+          <div><strong>Fast Scheduling</strong><br>Most jobs same week</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Service Area</h3>
+        <p class="small">
+          Kirkland, Bothell, Kenmore, Woodinville, Redmond, Juanita, Totem Lake, Finn Hill,
+          and Lake Forest Park.
+        </p>
+        <p class="small"><strong>Email:</strong> info@clearitupnw.com</p>
+        <p class="small"><strong>Phone:</strong> (360) 726-3709</p>
+      </div>
+    </div>
+  </header>
+
+  <section id="services">
+    <div class="container">
+      <h2>What We Haul</h2>
+      <p class="sub">Local hauling services for homeowners, renters, realtors, and property managers.</p>
+      <div class="grid-3">
+        <article class="card"><h3>Junk & Furniture Removal</h3><p>Single items to full loads. Couches, mattresses, appliances, and boxes.</p><p><strong>From $85</strong></p></article>
+        <article class="card"><h3>Garage & Estate Cleanouts</h3><p>Basement, garage, and whole-home cleanouts with donation-first sorting.</p><p><strong>From $350</strong></p></article>
+        <article class="card"><h3>Yard Waste Hauling</h3><p>Bagged leaves, branches, brush, fence boards, and landscape debris.</p><p><strong>From $80</strong></p></article>
+        <article class="card"><h3>Appliance & Mattress Removal</h3><p>Heavy-item pickup and compliant disposal including Freon appliances.</p><p><strong>From $95</strong></p></article>
+        <article class="card"><h3>Donation Runs</h3><p>Usable items dropped at Goodwill or Value Village when included in a haul.</p><p><strong>No added fee</strong></p></article>
+        <article class="card"><h3>Bin-to-Curb Service</h3><p>Weekly trash/recycling/yard bin roll-out and return for busy households.</p><p><strong>From $20/month</strong></p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="container">
+      <h2>Flat-Rate Pricing</h2>
+      <p class="sub">You get a clear quote before work starts. Text a photo for fastest response.</p>
+      <table class="price-table">
+        <thead>
+          <tr><th>Service</th><th>Typical Price</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Single item (chair, small appliance, mattress)</td><td>$85 - $95</td></tr>
+          <tr><td>Small load (few boxes, 1-2 items)</td><td>$95 - $175</td></tr>
+          <tr><td>Half SUV load</td><td>$200 - $250</td></tr>
+          <tr><td>Full SUV load</td><td>$300 - $375</td></tr>
+          <tr><td>Garage cleanout</td><td>$350 - $700</td></tr>
+          <tr><td>1BR apartment cleanout</td><td>$550 - $750</td></tr>
+          <tr><td>2BR cleanout</td><td>$850 - $1,200</td></tr>
+          <tr><td>Yard waste (5-10 bags)</td><td>$80</td></tr>
+          <tr><td>Yard waste (truck-load equivalent)</td><td>$150</td></tr>
+          <tr><td>Bin-to-curb monthly</td><td>$20 - $30/mo</td></tr>
+          <tr><td>Mattress recycling fee</td><td>+$30</td></tr>
+          <tr><td>TV/monitor recycling fee</td><td>+$25</td></tr>
+          <tr><td>Fridge/freezer Freon fee</td><td>+$50</td></tr>
+        </tbody>
+      </table>
+      <p class="sub" style="margin-top: 1rem;">Need exact pricing? Text photos to (360) 726-3709.</p>
+      <a class="btn btn-primary" href="sms:+13607263709">Text a Photo Now</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>How It Works</h2>
+      <div class="steps">
+        <article class="card"><div class="step-num">1</div><h3>Text Photos</h3><p>Send 2-3 photos with your zip code to (360) 726-3709.</p></article>
+        <article class="card"><div class="step-num">2</div><h3>Get Flat-Rate Quote</h3><p>We send an upfront quote and scheduling options, often same-day.</p></article>
+        <article class="card"><div class="step-num">3</div><h3>We Haul It Away</h3><p>On-time arrival, full load-out, and clean finish. Pay on completion.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container about">
+      <div>
+        <h2>Local. Licensed. Reliable.</h2>
+        <p>
+          Hi, I'm Ronghui Zhou, owner and operator of ClearItUp NW in Kirkland.
+          I built this business to give Eastside customers a fair, local alternative to big-chain pricing.
+        </p>
+        <p>
+          You get direct communication, honest quotes, and dependable scheduling.
+          We donate usable items first and recycle whenever possible.
+        </p>
+      </div>
+      <aside class="card">
+        <h3>Business Info</h3>
+        <p class="small"><strong>Legal Name:</strong> ClearItUp LLC</p>
+        <p class="small"><strong>Phone:</strong> (360) 726-3709</p>
+        <p class="small"><strong>Email:</strong> info@clearitupnw.com</p>
+        <p class="small"><strong>Website:</strong> clearitupnw.com</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Ready to Clear It Out?</h2>
+      <p class="sub">Text photos for a same-day quote. No pressure.</p>
+      <div class="contact-box">
+        <p><strong>Call or Text:</strong> <a href="tel:+13607263709">(360) 726-3709</a></p>
+        <p><strong>Email:</strong> <a href="mailto:info@clearitupnw.com">info@clearitupnw.com</a></p>
+        <p><strong>Service Area:</strong> Kirkland, Bothell, Kenmore, Woodinville, Redmond</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="sms:+13607263709">Text Now</a>
+          <a class="btn btn-secondary" href="mailto:info@clearitupnw.com">Send Email</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div>© 2026 ClearItUp LLC • Licensed & Insured • Kirkland, WA</div>
+      <div class="small">clearitupnw.com • (360) 726-3709</div>
+    </div>
+  </footer>
+</body>
+</html>
