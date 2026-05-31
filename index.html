@@ -257,6 +257,23 @@
       font-size: 0.93rem;
     }
 
+    .mobile-cta {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 60;
+      display: none;
+      background: #111;
+      border-top: 2px solid var(--accent);
+      padding: 0.55rem 0.75rem;
+    }
+
+    .mobile-cta a {
+      width: 100%;
+      text-align: center;
+    }
+
     .small {
       color: #555;
       font-size: 0.92rem;
@@ -277,6 +294,14 @@
 
       .hero {
         padding-top: 3rem;
+      }
+
+      .mobile-cta {
+        display: block;
+      }
+
+      body {
+        padding-bottom: 4.2rem;
       }
     }
   </style>
@@ -425,5 +450,9 @@
       <div class="small">clearitupnw.com • (360) 726-3709</div>
     </div>
   </footer>
+
+  <div class="mobile-cta">
+    <a class="btn btn-primary" href="sms:+13607263709">Text Photo for Free Quote</a>
+  </div>
 </body>
 </html>
