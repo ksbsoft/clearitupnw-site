@@ -63,9 +63,23 @@
     }
 
     .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
       font-weight: 800;
       letter-spacing: 0.2px;
       color: var(--brand-2);
+    }
+
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .brand-text {
+      line-height: 1;
     }
 
     .nav-links {
@@ -309,7 +323,10 @@
 <body>
   <nav class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="#top">ClearItUp NW</a>
+      <a class="brand" href="#top" aria-label="ClearItUp NW home">
+        <img class="brand-logo" src="clearitup-logo-a-icon.svg" alt="ClearItUp NW logo" />
+        <span class="brand-text">ClearItUp NW</span>
+      </a>
       <div class="nav-links">
         <a href="#services">Services</a>
         <a href="#pricing">Pricing</a>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">ClearItUp NW Icon - Option A</title>
+  <desc id="desc">A compact dump truck icon with debris used for profile images and favicon generation.</desc>
+
+  <rect width="512" height="512" rx="84" fill="#1f5d3a"/>
+
+  <g transform="translate(64,96)">
+    <rect x="44" y="156" width="180" height="92" rx="10" fill="#ffffff"/>
+    <polygon points="232,76 232,164 384,164 342,76" fill="#e47a2e"/>
+
+    <rect x="286" y="42" width="24" height="24" rx="4" transform="rotate(-15 286 42)" fill="#ffffff" opacity="0.8"/>
+    <rect x="334" y="28" width="18" height="18" rx="4" transform="rotate(10 334 28)" fill="#e47a2e" opacity="0.9"/>
+    <rect x="370" y="44" width="20" height="20" rx="4" transform="rotate(20 370 44)" fill="#ffffff" opacity="0.65"/>
+
+    <rect x="26" y="170" width="108" height="78" rx="10" fill="#ffffff"/>
+    <rect x="44" y="182" width="50" height="34" rx="6" fill="#1f5d3a" opacity="0.25"/>
+
+    <circle cx="98" cy="262" r="28" fill="#2f2f2f"/>
+    <circle cx="98" cy="262" r="11" fill="#bcbcbc"/>
+
+    <circle cx="280" cy="262" r="28" fill="#2f2f2f"/>
+    <circle cx="280" cy="262" r="11" fill="#bcbcbc"/>
+
+    <circle cx="350" cy="262" r="28" fill="#2f2f2f"/>
+    <circle cx="350" cy="262" r="11" fill="#bcbcbc"/>
+  </g>
+
+  <text x="256" y="462" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="800" letter-spacing="4" fill="#ffffff">NW</text>
+</svg>
