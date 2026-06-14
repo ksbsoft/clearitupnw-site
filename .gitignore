@@ -1,0 +1,8 @@
+# Ignore everything by default (keeps private business docs out of the public repo)
+*
+
+# Sync ONLY the deployed website files
+!index.html
+!CNAME
+!clearitup-logo-a-icon.svg
+!.gitignore
